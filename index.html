@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container">
       <h1>Billy’s Washer and Dryer Repair</h1>
@@ -19,14 +20,19 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
       <h2>Reliable Washer & Dryer Repair You Can Trust</h2>
       <p>Serving your local area with fast, affordable appliance repair services.</p>
-      <a href="#contact" class="btn">Schedule a Repair</a>
+      <div class="hero-buttons">
+        <a href="tel:+15551234567" class="btn">Call Now</a>
+        <a href="#contact" class="btn btn-secondary">Schedule a Repair</a>
+      </div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <div class="container">
       <h2>About Me</h2>
@@ -34,6 +40,7 @@
     </div>
   </section>
 
+  <!-- Reviews Section -->
   <section id="reviews" class="alt">
     <div class="container">
       <h2>Customer Reviews</h2>
@@ -48,18 +55,45 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
       <p>Need a repair? Reach out today!</p>
-      <p><strong>Phone:</strong> (555) 123-4567</p>
-      <p><strong>Email:</strong> billyrepairs@example.com</p>
-      <p><strong>Service Area:</strong> Oklahoma City and surrounding areas</p>
+      
+      <div class="contact-section-inner">
+        <div class="contact-info">
+          <p><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a></p>
+          <p><strong>Email:</strong> <a href="mailto:billyrepairs@example.com">billyrepairs@example.com</a></p>
+          <p><strong>Service Area:</strong> Oklahoma City and surrounding areas</p>
+          <a href="tel:+15551234567" class="btn btn-contact">Call Now</a>
+        </div>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207861.58350425292!2d-97.68832258590912!3d35.50830252818803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2119e530b9041%3A0xd8a2698783fcf5c9!2sOklahoma%20City%20Metropolitan%20Area%2C%20OK!5e0!3m2!1sen!2sus!4v1761254010172!5m2!1sen!2sus"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Billy’s Washer and Dryer Repair</p>
+    <p>© 2025 Billy’s Washer & Dryer Repair</p>
   </footer>
+
+  <!-- JavaScript for shrinking header -->
+  <script>
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50){
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+  </script>
 </body>
 </html>
