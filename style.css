@@ -1,23 +1,105 @@
+/* General Layout */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f4f6;
-  color: #333;
-  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* Header */
 header {
-  background-color: #007acc;
+  background: #0077b6;
   color: white;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
-main {
-  margin: 2rem;
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-footer {
-  background-color: #eee;
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: #ff7b00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero .btn:hover {
+  background: #ff9e42;
+}
+
+/* Sections */
+section {
+  padding: 3rem 0;
+}
+
+section.alt {
+  background: white;
+}
+
+h2 {
+  color: #023e8a;
+  margin-bottom: 1rem;
+}
+
+.review {
+  background: #e0f0ff;
+  border-left: 5px solid #0077b6;
+  margin: 1rem 0;
   padding: 1rem;
+  border-radius: 5px;
+}
+
+.review span {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }
