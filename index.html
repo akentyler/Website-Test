@@ -10,7 +10,7 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <h1>Billy’s Washer and Dryer Repair</h1>
+      <h1>Billy’s Washer and Dryer Repair Service</h1>
       <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -23,25 +23,27 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
-      <h2>Reliable Washer & Dryer Repair You Can Trust</h2>
-      <p>Serving your local area with fast, affordable appliance repair services.</p>
+      <h2>Reliable Appliance Repair You Can Trust</h2>
+      <p class="service-area">
+        Serving Yukon, Mustang, El Reno, Piedmont, Blanchard, Newcastle, and the Oklahoma City Metro area with fast and affordable appliance repair services.
+      </p>
+      <p>Call now and ask about same-day service!</p>
       <div class="hero-buttons">
         <a href="tel:+15551234567" class="btn">Call Now</a>
-        <a href="#contact" class="btn btn-secondary">Schedule a Repair</a>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="fade-section">
     <div class="container">
       <h2>About Me</h2>
-      <p>Hi, I’m Billy — with years of hands-on experience, I specialize in repairing washers and dryers of all major brands. My goal is to get your appliances back up and running quickly and affordably — without the hassle of replacement costs.</p>
+      <p>Hi, I'm Billy and I have decades of hands-on experience repairing home appliances. I specialize in washers, dryers, refrigerators, freezers, ovens, and more across all major brands. My mission is to get your appliances back up and running quickly and affordably—without the hassle of replacement costs.</p>
     </div>
   </section>
 
   <!-- Reviews Section -->
-  <section id="reviews" class="alt">
+  <section id="reviews" class="alt fade-section">
     <div class="container">
       <h2>Customer Reviews</h2>
       <div class="review">
@@ -56,7 +58,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="fade-section">
     <div class="container">
       <h2>Contact</h2>
       <p>Need a repair? Reach out today!</p>
@@ -64,8 +66,7 @@
       <div class="contact-section-inner">
         <div class="contact-info">
           <p><strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a></p>
-          <p><strong>Email:</strong> <a href="mailto:billyrepairs@example.com">billyrepairs@example.com</a></p>
-          <p><strong>Service Area:</strong> Oklahoma City and surrounding areas</p>
+          <p><strong>Service Area:</strong> Yukon, Mustang, Blanchard, Newcastle, and the Oklahoma City Metro area.</p>
           <a href="tel:+15551234567" class="btn btn-contact">Call Now</a>
         </div>
         <div class="map-container">
@@ -75,17 +76,17 @@
           </iframe>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Billy’s Washer & Dryer Repair</p>
+    <p>© 2025 Billy’s Washer & Dryer Repair Service</p>
   </footer>
 
-  <!-- JavaScript for shrinking header -->
+  <!-- JavaScript -->
   <script>
+    // Shrink header on scroll
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
       if(window.scrollY > 50){
@@ -94,6 +95,19 @@
         header.classList.remove('shrink');
       }
     });
+
+    // Fade-in on scroll for sections
+    const fadeSections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    fadeSections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>

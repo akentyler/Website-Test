@@ -1,7 +1,6 @@
-/* General */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px; /* prevents sections being hidden behind sticky header */
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -66,56 +65,64 @@ header nav a:hover {
   color: #ff7b00;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-  background: #023e8a;
+  background: linear-gradient(135deg, #023e8a, #0353a4);
   color: white;
   text-align: center;
   padding: 6rem 1rem;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.hero .container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Hero Buttons Side by Side */
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+.hero h2 { 
+  animation: fadeInUp 1s ease forwards;
+  color: #fdfdfd;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-.hero-buttons .btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+.hero p { 
+  animation: fadeInUp 1s ease forwards;
+  color: #f0f0f0;
 }
 
-/* Orange primary button */
+.hero-buttons { 
+  animation: fadeInUp 1s ease forwards; 
+}
+
+/* Service area styling */
+.hero .service-area {
+  max-width: 650px;
+  margin: 0.5rem auto 1.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+/* Hero fade-in animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
 .btn {
+  display: inline-block;
   background: linear-gradient(135deg, #ff7b00, #ff9e42);
   color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
-}
-
-/* Blue secondary button */
-.btn-secondary {
-  background: linear-gradient(135deg, #0077b6, #0096ff);
-  color: white;
-}
-
-.btn-secondary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0,0,0,0.2);
 }
@@ -135,6 +142,24 @@ h2 {
   text-align: center;
 }
 
+/* Fade-in sections on scroll */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About section text */
+#about .container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* Reviews */
 .review {
   background: #e0f0ff;
@@ -149,13 +174,6 @@ h2 {
 .review:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-}
-
-.review span {
-  display: block;
-  margin-top: 0.5rem;
-  font-style: italic;
-  color: #555;
 }
 
 /* Contact Section Layout */
@@ -175,25 +193,6 @@ h2 {
   flex: 1 1 300px;
 }
 
-/* Bottom Call Button */
-.btn-contact {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff7b00, #ff9e42);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-  transition: all 0.3s;
-}
-
-.btn-contact:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
-}
-
-/* Map */
 .map-container iframe {
   width: 100%;
   height: 400px;
@@ -216,30 +215,13 @@ footer {
     text-align: center;
     margin-top: 0.5rem;
   }
-
   header nav a {
     display: inline-block;
     margin: 0.3rem 0.8rem;
   }
-
-  .hero {
-    padding: 4rem 1rem;
-  }
-
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .map-container iframe {
-    height: 300px;
-  }
-
-  .contact-section-inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-info, .map-container {
-    text-align: center;
-  }
+  .hero { padding: 4rem 1rem; }
+  .hero h2 { font-size: 1.6rem; }
+  .contact-section-inner { flex-direction: column; gap: 1rem; }
+  .contact-info, .map-container { text-align: center; }
+  .map-container iframe { height: 300px; }
 }
